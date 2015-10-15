@@ -8,20 +8,29 @@ var rightBorder = window.innerWidth - walker.offsetWidth;
 var speed = 10;
 var xPos = rightBorder;
 
-// Create an update function that will trigger every frame:
+// The update function is called once every "frame" (via setInterval)
+// Changing the walker's position each frame, will cause him to move across the screen
 function update() {
   // Move "speed" pixels per iteration:
-  xPos += walkingLeft ? -speed : speed;
+  if(walkingLeft){
+    xPos -= speed;
+  } else {
+    xPos += speed;
+  }
+  // reposition the walker
   walker.style.left = xPos + "px";
 
   // Turn around when you've crossed a border:
   if (xPos < leftBorder || xPos > rightBorder) {
+    // css controls visual, we just ensure the correct class is assigned to walker
     walker.classList.toggle("flip");
     walkingLeft = !walkingLeft;
   }
 };
 
-// Establish an update interval (framerate):
+// Establish an update interval (framerate)
+// This will call the "update" method every 100ms
+// Add code to "update" to change the walker's position
 setInterval(update, 100);
 
 
