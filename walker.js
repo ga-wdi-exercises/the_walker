@@ -2,8 +2,8 @@
 var walker = document.getElementById('walker');
 
 // Configure motion params:
-var leftBorder = 400;
-var rightBorder = 700;
+var leftBorder = 0;
+var rightBorder = window.innerWidth - walker.offsetWidth;
 
 // Have the stick figure start at the right border and start walking left
 // When he crosses the left border, have him turn around and start walking right (and vice versa)
