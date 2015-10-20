@@ -20,6 +20,7 @@ Try starting from the "walking_right" branch.  The walker is already walking acr
 ## Bonus Spec
 
 * When clicked, The Walker would like to change direction.
+* When the left arrow key is pressed, the walker would like to go left. Same goes for the right arrow.
 * Debug mode: display walker speed, direction and two other relevant properties of your choice on the screen.
 
 ## Further review
